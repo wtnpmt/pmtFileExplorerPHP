@@ -25,7 +25,7 @@ if (! empty($_GET['root'])) {
         }else{
             echo '<tr><td class="type">MODE</td><td class="spec"><a href="oldlist.php?root=' . urlencode($root) . '">带图浏览模式</a></td></tr>';
         }
-        $flag = false;
+        $picindex=0;
         while (($fl = readdir($handle)) !== false) {
             if ($fl != '.' && $fl != '..') {
                 $temp = $path . "/" . $fl;
@@ -42,8 +42,8 @@ if (! empty($_GET['root'])) {
                         case 'GIF':
                         case 'PNG':
                         case 'BMP':
-                            echo '<a href="' . $temp . '">' . $fl . '</a>';
-                            $flag = true;
+                            $picindex++;
+                            echo '<a href="pic.php?path=' . urlencode($path) . '&index='.$picindex.'">' . $fl . '</a>';
                             break;
                         // VIDEO
                         case 'MP4':
@@ -62,9 +62,6 @@ if (! empty($_GET['root'])) {
                 }
                 echo '</td><tr>';
             }
-        }
-        if($flag){
-            echo '<tr><td class="type">MODE</td><td class="spec"><a href="piclist.php?&path=' . urlencode($path) . '">仅图片浏览模式</a></td></tr>';
         }
     }
 } else {
