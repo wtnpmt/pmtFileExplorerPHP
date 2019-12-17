@@ -2,8 +2,9 @@
 <html>
 <head>
 <title>PIC</title>
-<meta name="viewport"
-	content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-stand|ie-comp">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="main.css" />
 <style>
 body {
